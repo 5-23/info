@@ -1,2 +1,2 @@
 # info
-my info site
+my info
