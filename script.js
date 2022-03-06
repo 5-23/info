@@ -71,7 +71,6 @@ class githubBUTTON{
         this.y = githubPOS.y;
         githubPOS.y += (y-githubPOS.y)/speedG
         githubPOS.x += (x-githubPOS.x)/speedG
-        console.log(y)
         this.width = width;
         this.height = height;
 
@@ -137,7 +136,6 @@ class discordBUTTON{
         this.y = discordPOS.y;
         discordPOS.y += (y-discordPOS.y)/speedD
         discordPOS.x += (x-discordPOS.x)/speedD
-        console.log(y)
 
         this.width = width;
         this.height = height;
@@ -174,7 +172,6 @@ class title{
         this.y = titlePOS.y;
         titlePOS.y += (y-titlePOS.y)/speedT
         titlePOS.x += (x-titlePOS.x)/speedT
-        console.log(y)
 
         this.size = size;
         drow.fillStyle = "black";
@@ -195,7 +192,6 @@ class titleBox{
         this.y = titleBoxPOS.y;
         titleBoxPOS.y += (y-titleBoxPOS.y)/speedTB
         titleBoxPOS.x += (x-titleBoxPOS.x)/speedTB
-        console.log(y)
 
         this.width = width;
         this.height = height;
@@ -229,15 +225,18 @@ class linkBox{
         linkBoxPOS.setY = y;
 
         linkBoxPOS.setY = y
-        if (pointer.x > this.x){
-            if (pointer.x < this.x+this.width){
-                if (pointer.y > this.y){
-                    if (pointer.y < this.y+this.height){
-                        linkBoxPOS.setY = y+400
+        if (this.x > 1740){
+            if (pointer.x > this.x){
+                if (pointer.x < this.x+this.width){
+                    if (pointer.y > this.y){
+                        if (pointer.y < this.y+this.height){
+                            linkBoxPOS.setY = y+400
+                        }
                     }
                 }
             }
         }
+        console.log(this.x)
 
         drow.lineJoin = "round";
         drow.lineWidth = cornerRadius;
