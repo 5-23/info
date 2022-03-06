@@ -84,7 +84,7 @@ class githubBUTTON{
                         showText = ["깃허브" , 100];
                         if (pointerEvent["on"] == 1){github.src = "img/githubPUSH.png";}
                         if (pointerEvent["click"] == 1){
-                            window.open("https://github.com/5-23/just-square", '_blank')
+                            window.open("https://github.com/5-23", '_blank')
                         }
                     }
                 }
