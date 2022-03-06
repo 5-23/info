@@ -52,6 +52,7 @@ var speedD = 50;
 var speedT = 50;
 var speedTB = 30;
 var speedLB = 50;
+var showText = [];
 
 function mousepointer(){
     drow.fillStyle = "red";
@@ -80,6 +81,7 @@ class githubBUTTON{
                 if (pointer.y > this.y){
                     if (pointer.y < this.y+this.height){
                         github.src = "img/githubON.png";
+                        showText = ["깃허브" , 100];
                         if (pointerEvent["on"] == 1){github.src = "img/githubPUSH.png";}
                         if (pointerEvent["click"] == 1){
                             window.open("https://github.com/5-23/just-square", '_blank')
@@ -113,6 +115,7 @@ class youtubeBUTTON{
                 if (pointer.y > this.y){
                     if (pointer.y < this.y+this.height){
                         youtube.src = "img/youtubeON.png";
+                        showText = ["유튜브" , 100];
                         if (pointerEvent["on"] == 1){youtube.src = "img/youtubePUSH.png";}
                         if (pointerEvent["click"] == 1){
                             window.open("https://www.youtube.com/c/SCRATCHER523/", '_blank')
@@ -146,6 +149,7 @@ class discordBUTTON{
                 if (pointer.y > this.y){
                     if (pointer.y < this.y+this.height){
                         discord.src = "img/discordON.png";
+                        showText = ["디스코드" , 100];
                         if (pointerEvent["on"] == 1){discord.src = "img/discordPUSH.png";}
                         if (pointerEvent["click"] == 1){
                             window.open("https://discord.com/invite/xNr9ykDU4f", '_blank')
@@ -176,7 +180,7 @@ class title{
         this.size = size;
         drow.fillStyle = "black";
 
-        drow.font = '100px serif';
+        drow.font = '100px mian';
 
         drow.fillText(
             "5-23",
@@ -251,6 +255,39 @@ class linkBox{
         drow.fillStyle = '#ff0000';
     }
 }
+class textBox{
+    constructor (text , width = 0){
+        this.x = pointer.x;
+        this.y = pointer.y-50;
+
+        // this.width = width;
+        this.width = 110;
+        this.height = 42;
+        this.size = 100;
+        var cornerRadius = 35;
+
+        drow.lineJoin = "round";
+        drow.lineWidth = cornerRadius;
+
+
+        drow.strokeStyle = "#4753f1";
+        drow.fillStyle = "#4753f1";
+
+        drow.strokeRect(this.x+(cornerRadius/2), this.y+(cornerRadius/2), this.width-cornerRadius, this.height-cornerRadius);
+        drow.fillRect(this.x+(cornerRadius/2), this.y+(cornerRadius/2), this.width-cornerRadius, this.height-cornerRadius);
+
+
+        drow.font = "40px myfont";
+        drow.fillStyle = "white";
+
+        drow.fillText(
+            text,
+            this.x+6,
+            this.y+36,
+            this.size,
+        )
+    }
+}
 
 
 inputKey = null
@@ -276,15 +313,17 @@ function frame(){
     }
     new titleBox(1.7 , -100 , 1920 , 250);
     new title(800 , 110 , 1500);
-    
-    
+    if (showText[0] != undefined){if(showText[1] != undefined){new textBox(showText[0] , showText[1]);}}
+
+
     
     mousepointer();
     
     requestAnimationFrame(frame);
 
-
+    
     delete pointerEvent["click"];
+    showText = [];
 }
 
 frame()
