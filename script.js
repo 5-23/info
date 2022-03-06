@@ -55,7 +55,7 @@ var speedLB = 50;
 var showText = [];
 
 function mousepointer(){
-    drow.fillStyle = "red";
+    drow.fillStyle = "white";
     pointer.x += (mouse.x - pointer.x)/10-0.5;
     pointer.y += (mouse.y - pointer.y)/10-0.5;
     drow.fillRect(
@@ -178,7 +178,7 @@ class title{
         titlePOS.x += (x-titlePOS.x)/speedT
 
         this.size = size;
-        drow.fillStyle = "black";
+        drow.fillStyle = "white";
 
         drow.font = '100px mian';
 
