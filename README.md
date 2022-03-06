@@ -1,2 +1,2 @@
-# info
-my info
+# 현재상태
+asdf
