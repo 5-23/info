@@ -124,7 +124,7 @@ class githubBUTTON{
                         showText = ["깃허브" , 100];
                         if (pointerEvent["on"] == 1){github.src = "img/githubPUSH.png";}
                         if (pointerEvent["click"] == 1){
-                            Location.href = "?github"
+                            location.href = "?github"
                         }
                     }
                 }
