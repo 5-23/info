@@ -627,7 +627,7 @@ function frame(){
                 "x" : 800,
                 "y" : -500
             }
-        }else if (loc == undefined){
+        }else if (loc == ""){
             titlePOS = {
                 "x" : 800,
                 "y" : -500
@@ -658,7 +658,7 @@ function frame(){
             new discordBUTTON(linkBoxPOS.setX+11 , linkBoxPOS.setY+110 , 100 , 100);
         }
         new titleBox(1.7 , -100 , 1920 , 250);
-        new title(800 , 110 , 1500);
+        new title(800 , 110 , 1500 , "5-23");
     }else if (loc == ""){
         document.title = "SCRATCHER 5-23♪";
         icon.href = "https://github.com/5-23/info/blob/main/img/icon.png?raw=true";
